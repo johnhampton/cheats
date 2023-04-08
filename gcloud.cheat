@@ -1,0 +1,7 @@
+% gcloud
+
+# Proxy to a Cloud SQL instance
+cloud_sql_proxy --instances=<instance> -dir /tmp
+
+$ project : gcloud projects list --format="value(name)" --filter="parent.id=661427315807"
+$ instance: gcloud sql instances list --project=<project> --format="value(connectionName)"
