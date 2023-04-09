@@ -1,0 +1,9 @@
+% github
+
+# Create a public repository for the current repository
+gh repo create <owner>/<reponame> --public --source . --remote=origin 
+git switch master
+git push -u origin master
+
+$ reponame: basename $(pwd); echo
+$ owner: echo -e 'johnhampton\ntopagentnetwork'
