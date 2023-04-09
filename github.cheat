@@ -2,7 +2,10 @@
 
 # Create a public repository for the current repository
 gh repo create <owner>/<reponame> --public --source . --remote=origin 
-git switch master
+git push -u origin master
+
+# Create a private repository for the current repository
+gh repo create <owner>/<reponame> --private --source . --remote=origin 
 git push -u origin master
 
 $ reponame: basename $(pwd); echo
