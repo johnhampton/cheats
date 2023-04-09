@@ -1,7 +1,8 @@
 % gcloud
 
-# Proxy to a Cloud SQL instance
-cloud_sql_proxy --instances=<instance> -dir /tmp
+# Proxy to a Cloud SQL instances
+cloud_sql_proxy --instances=<instances> -dir /tmp
 
-$ project : gcloud projects list --format="value(name)" --filter="parent.id=661427315807"
-$ instance: gcloud sql instances list --project=<project> --format="value(connectionName)"
+$ projects: gcloud projects list --format="value(name)" --filter="parent.id=661427315807 AND lifecycleState=ACTIVE" --- --multi --expand
+$ instances: for p in <projects>;  do gcloud sql instances list --project=$p --format="value(connectionName,databaseVersion)" ; done  --- --multi --map "awk '{ print $1 }' | paste -s -d, -"
+
