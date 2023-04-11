@@ -1,0 +1,4 @@
+% raycast
+
+# Publish extension (including forked extensions)
+npx @raycast/api@latest publish

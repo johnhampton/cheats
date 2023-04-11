@@ -2,3 +2,6 @@
 
 # Update system nix
 sudo -i sh -c 'nix-channel --update && nix-env -iA nixpkgs.nixVersions.nix_2_14 && launchctl remove org.nixos.nix-daemon && sleep 5 && launchctl load /Library/LaunchDaemons/org.nixos.nix-daemon.plist'
+
+# Show contents of flakes
+nix flake show --allow-import-from-derivation

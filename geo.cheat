@@ -1,0 +1,12 @@
+% geojson, postgres
+
+# Load geojson into a postgres database
+ogr2ogr -f "PostgreSQL" PG:"dbname=<dbname> user=<user>" <file>
+
+# Load geojson into a postgres database with new table name
+ogr2ogr -f "PostgreSQL" PG:"dbname=<dbname> user=<user>" "<file>" -nln <table> -append
+
+$ dbname: psql -q -A -t -c "SELECT datname FROM pg_database"
+$ file: find . \( -name '*.geojson' -o -name '*.json' \) -print
+$ user: whoami; echo 
+
