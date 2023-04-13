@@ -10,3 +10,10 @@ $ dbname: psql -q -A -t -c "SELECT datname FROM pg_database"
 $ file: find . \( -name '*.geojson' -o -name '*.json' \) -print
 $ user: whoami; echo 
 
+% jetstream, geojson
+@ geojson, postgres
+
+# Download and load jetstream data
+nix run github:/topagentnetwork/jetstream -- load manifest -a "<access_code>" -u <user> -d <dbname> -o <dir>
+$ dir: fd -t d
+

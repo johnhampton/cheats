@@ -1,0 +1,4 @@
+% tmux
+
+# List key bindings with notes
+tmux list-keys -N
