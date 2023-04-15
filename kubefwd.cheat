@@ -1,0 +1,10 @@
+% kubefwd, k8s
+
+# Forward to all services in a namespace
+sudo kubefwd svc -n <namespace>
+
+# Forward to a singe service
+sudo kubefwd svc -n <namespace> -f metadata.name=<service>
+
+$ namespace: kubectl get ns --no-headers -o custom-columns=:metadata.name 
+$ service: kubectl get svc -n test --no-headers -o custom-columns=:metadata.name 
