@@ -1,0 +1,4 @@
+% macos
+
+# Get bundle id of application
+osascript -e 'id of app "<app>"'
