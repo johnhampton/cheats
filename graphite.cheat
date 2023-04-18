@@ -1,0 +1,13 @@
+% graphite, git, github
+
+# Add a commit onto the branch
+gt commit create
+
+# Idempotently force push all branches in the current stack to GitHub, creating or updating distinct pull requests for each.
+gt stack submit
+
+# Opens the PR page for the current (or provided) branch (or pr number).
+gt dash pr
+
+# Open the Graphite dashboard in the web
+gt dash d
