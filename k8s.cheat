@@ -1,0 +1,8 @@
+% k8s
+
+# Scale deployment
+kubectl scale -n <namespace> --replicas=<num_replicas> deployment/<deployment>
+
+$ namespace: kubectl get ns --no-headers -o custom-columns=:metadata.name
+$ deployment: kubectl get deployment -n <namespace> --no-headers -o custom-columns=:metadata.name
+$ service: kubectl get svc -n <namespace> --no-headers -o custom-columns=:metadata.name
