@@ -1,0 +1,4 @@
+% patch
+
+# Create a patch
+diff -Naur <orig> <new> > <patch_file>

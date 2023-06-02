@@ -1,0 +1,4 @@
+% qa_loader
+
+# Add a qualified agent
+nix run github:topagentnetwork/qa_loader -- --chapter <chapter-name> add --id <agent-id> --firstname <firstname> --lastname <lastname> --email <email> --brokerage <brokerage>

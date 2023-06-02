@@ -8,8 +8,5 @@ gcloud pubsub subscriptions pull --project=<project> --format=json <subscription
 
 $ project: gcloud projects list --format="value(name)" --filter="parent.id=661427315807 AND lifecycleState=ACTIVE"
 $ projects: gcloud projects list --format="value(name)" --filter="parent.id=661427315807 AND lifecycleState=ACTIVE" --- --multi --expand
-
 $ subscription: gcloud pubsub subscriptions list --project=tan-ng --format="value(name)"
-
 $ instances: for p in <projects>;  do gcloud sql instances list --project=$p --format="value(connectionName,databaseVersion)" ; done  --- --multi --map "awk '{ print $1 }' | paste -s -d, -"
-
