@@ -5,3 +5,6 @@ sudo -i sh -c 'nix-channel --update && nix-env -iA nixpkgs.nixVersions.nix_2_14 
 
 # Show contents of flakes
 nix flake show --allow-import-from-derivation
+
+# Repair store
+nix-store --verify --check-contents --repair
