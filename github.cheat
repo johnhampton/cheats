@@ -8,5 +8,8 @@ git push -u origin master
 gh repo create <owner>/<reponame> --private --source . --remote=origin 
 git push -u origin master
 
+# Fork a repository
+gh repo fork --org <owner> --remote
+
 $ reponame: basename $(pwd); echo
 $ owner: echo -e 'johnhampton\ntopagentnetwork'
