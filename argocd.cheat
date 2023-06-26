@@ -1,0 +1,8 @@
+% argocd
+
+# Login to ArgoCD
+argocd login --port-forward-namespace argocd --port-forward
+
+# Logout from ArgoCD
+argocd logout port-forward
+
