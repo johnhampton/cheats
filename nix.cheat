@@ -5,3 +5,6 @@ nix flake show --allow-import-from-derivation
 
 # Repair store
 nix-store --verify --check-contents --repair
+
+# Show outputs of a derivation
+nix-store -q --outputs <derivation>
