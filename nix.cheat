@@ -8,3 +8,7 @@ nix-store --verify --check-contents --repair
 
 # Show outputs of a derivation
 nix-store -q --outputs <derivation>
+
+# Nix darwin linux builder
+QEMU_OPTS="-m 8192" nix run nixpkgs#darwin.linux-builder
+
