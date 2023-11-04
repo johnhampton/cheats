@@ -12,6 +12,9 @@ gcloud pubsub topics list --project=<project>
 # Get subscriptions for a pubsub topic
 gcloud pubsub topics list-subscriptions --project=<project> <topic>
 
+# List tags for an image
+gcloud container images list-tags gcr.io/<project>/<image>
+
 $ project: gcloud projects list --format="value(name)" --filter="parent.id=661427315807 AND lifecycleState=ACTIVE"
 $ projects: gcloud projects list --format="value(name)" --filter="parent.id=661427315807 AND lifecycleState=ACTIVE" --- --multi --expand
 $ subscription: gcloud pubsub subscriptions list --project=tan-ng --format="value(name)"
