@@ -3,6 +3,9 @@
 # Show contents of flakes
 nix flake show --allow-import-from-derivation
 
+# Show flake information/metadata
+nix flake metadata
+
 # Repair store
 nix-store --verify --check-contents --repair
 
@@ -11,4 +14,3 @@ nix-store -q --outputs <derivation>
 
 # Nix darwin linux builder
 QEMU_OPTS="-m 8192" nix run nixpkgs#darwin.linux-builder
-
