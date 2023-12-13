@@ -2,3 +2,6 @@
 
 # List key bindings with notes
 tmux list-keys -N
+
+# Create a new session with a name
+tmux new-session -s <session-name>
