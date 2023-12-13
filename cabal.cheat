@@ -6,3 +6,6 @@ cabal init -m -n -l NONE --lib -a "John Hampton" -e "john@topagentnetwork.com" -
 # Create new haskell library with tests
 cabal init -m -n -l NONE --lib -a "John Hampton" -e "john@topagentnetwork.com" --language=GHC2021 --extension=DerivingStrategies --tests -o <exposed-module>
 
+# Get cabal package description
+cabal get --only-package-description <package-name>
+
