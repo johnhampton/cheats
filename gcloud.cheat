@@ -1,7 +1,10 @@
 % gcloud
 
-# Proxy to a Cloud SQL instances
-cloud_sql_proxy --instances=<instances> -dir /tmp
+# Proxy to Cloud SQL instances
+cloud_sql_proxy -instances "$(echo <instances> | tr ' ' ',')" -dir /tmp
+
+# Proxy to all Cloud SQL instances in the given namespaces
+cloud_sql_proxy -projects "$(echo <projects> | tr ' ' ',')" -dir /tmp
 
 # Get pubsub message
 gcloud pubsub subscriptions pull --project=<project> --format=json <subscription> | jq 'map(.message.data |= (@base64d))'

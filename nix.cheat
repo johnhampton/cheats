@@ -9,6 +9,9 @@ nix flake metadata
 # Repair store
 nix-store --verify --check-contents --repair
 
+# Optimize store
+nix store optimise
+
 # Show outputs of a derivation
 nix-store -q --outputs <derivation>
 

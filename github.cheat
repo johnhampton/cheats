@@ -11,5 +11,8 @@ git push -u origin master
 # Fork a repository
 gh repo fork --org <owner> --remote
 
+# Search for a TAN repository
+gh search repos --owner=topagentnetwork <query>
+
 $ reponame: basename $(pwd); echo
 $ owner: echo -e 'johnhampton\ntopagentnetwork'
