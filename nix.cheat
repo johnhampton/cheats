@@ -17,3 +17,7 @@ nix-store -q --outputs <derivation>
 
 # Nix darwin linux builder
 QEMU_OPTS="-m 8192" nix run nixpkgs#darwin.linux-builder
+
+# Collect garbage
+sudo nix-collect-garbage --delete-older-than 30d
+
