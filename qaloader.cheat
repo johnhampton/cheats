@@ -1,4 +1,36 @@
 % qa_loader
 
 # Add a qualified agent
-nix run github:topagentnetwork/qa_loader -- --chapter <chapter-name> add --id <agent-id> --firstname <firstname> --lastname <lastname> --email <email> --brokerage <brokerage>
+nix run github:topagentnetwork/qa_loader -- --chapter <chapter-name> \
+  add \
+  --qa-service qualified-agent-service.<env>:9111 \
+  --registration-service registration-service.<env>:9111 \
+  <dry-run> \
+  --id <agent-id> \
+  --firstname <firstname> \
+  --lastname <lastname> \
+  --email <email> \
+  --brokerage <brokerage>
+
+# Remove a qualified agent
+nix run github:topagentnetwork/qa_loader -- \
+  --chapter <chapter-name> \
+  remove \
+  --qa-service qualified-agent-service.<env>:9111 \
+  --registration-service registration-service.<env>:9111 \
+  <dry-run> \
+  --id <agent-id>
+
+
+# Remove qualified agent from a file
+nix run github:topagentnetwork/qa_loader -- \
+  --chapter <chapter-name> \
+  remove \
+  --qa-service qualified-agent-service.<env>:9111 \
+  --registration-service registration-service.<env>:9111 \
+  <dry-run> \
+  --file <file>
+
+$ dry-run: echo "Dry run;Live" | tr ';' '\n' --- --map "grep -q Live || echo '--dry-run'" 
+$ env:  echo "test prod" | tr ' ' '\n'
+$ file: find . -iname '*.csv' -type f -print
