@@ -4,6 +4,6 @@
 # Forward to all services in a namespace
 sudo -E kubefwd svc -n <namespace>
 
-# Forward to a singe service
+# Forward to a single service
 sudo -E kubefwd svc -n <namespace> -f metadata.name=<service>
 
