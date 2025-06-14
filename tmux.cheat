@@ -5,3 +5,6 @@ tmux list-keys -N
 
 # Create a new session with a name
 tmux new-session -s <session-name>
+
+# Rename the current window
+tmux rename-window <new-name>

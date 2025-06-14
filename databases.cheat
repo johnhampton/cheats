@@ -45,3 +45,19 @@ $ prod-database-name: psql -h /tmp/tan-ng-prod:us-west1:prod-master2-database -U
 $ legacy-prod-database-name: psql -h /tmp/tan-ng-prod:us-west1:prod-master-database -U postgres -d postgres -t -c "SELECT datname FROM pg_database WHERE datistemplate = false and datname != 'cloudsqladmin' order by datname;" -A
 $ prod-analytics-database-name: psql -h /tmp/tan-ng-prod:us-west1:prod-analytics-database -U postgres -d postgres -t -c "SELECT datname FROM pg_database WHERE datistemplate = false and datname != 'cloudsqladmin' order by datname;" -A
 
+% postgres, pgcli, clones
+
+# Connect with pgcli to legacy production database (9.6)
+pgcli -h /tmp/tan-ng-prod:us-west1:prod-master-database-clone -U postgres -d <legacy-prod-database-name>
+
+# Connect with pgcli to new production database (12.0)
+pgcli -h /tmp/tan-ng-prod:us-west1:prod-master2-database-clone -U postgres -d <prod-database-name>
+
+# Connect with pgcli to production analytics database (9.6)
+pgcli -h /tmp/tan-ng-prod:us-west1:prod-analytics-database-clone -U postgres -d <prod-analytics-database-name>
+
+$ prod-database-name: psql -h /tmp/tan-ng-prod:us-west1:prod-master2-database-clone -U postgres -d postgres -t -c "SELECT datname FROM pg_database WHERE datistemplate = false and datname != 'cloudsqladmin' order by datname;" -A
+$ legacy-prod-database-name: psql -h /tmp/tan-ng-prod:us-west1:prod-master-database-clone -U postgres -d postgres -t -c "SELECT datname FROM pg_database WHERE datistemplate = false and datname != 'cloudsqladmin' order by datname;" -A
+$ prod-analytics-database-name: psql -h /tmp/tan-ng-prod:us-west1:prod-analytics-database-clone -U postgres -d postgres -t -c "SELECT datname FROM pg_database WHERE datistemplate = false and datname != 'cloudsqladmin' order by datname;" -A
+
+
