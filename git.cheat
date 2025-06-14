@@ -5,3 +5,6 @@ git rev-parse HEAD | tr -d '\n' | pbcopy
 
 # Copy previous commit sha to clipboard
 git rev-parse HEAD~<number_of_commits> | tr -d '\n' | pbcopy
+
+# Show status including all untracked files in directories
+git status -uall
