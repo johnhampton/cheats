@@ -6,3 +6,27 @@ argocd login --port-forward-namespace argocd --port-forward
 # Logout from ArgoCD
 argocd logout port-forward
 
+# List all applications
+argocd app list
+
+# List applications in a specific project
+argocd app list -p <project>
+
+# Get application names as JSON
+argocd app list -o json | jq -r '.[].metadata.name'
+
+# Get details of a specific application
+argocd app get <app_name>
+
+# Terminate ongoing operation for an application
+argocd app terminate-op <app_name>
+
+# Sync an application
+argocd app sync <app_name>
+
+# Force sync with replace strategy
+argocd app sync <app_name> --replace --force
+
+$ app_name: argocd app list -o json | jq -r '.[].metadata.name'
+$ project: argocd proj list -o name
+
