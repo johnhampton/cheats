@@ -11,3 +11,9 @@ claude config get -g autoUpdaterStatus
 
 # Install specific version of Claude
 npm install -g @anthropic-ai/claude-code@<version>
+
+# Rollback Claude to previous version (disable auto-update and install specific version)
+claude config set -g autoUpdaterStatus disabled 
+npm install -g @anthropic-ai/claude-code@<version>
+
+$ version: npm view @anthropic-ai/claude-code versions --json | jq -r '.[]' | tac
