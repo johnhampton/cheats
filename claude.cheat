@@ -1,0 +1,13 @@
+% claude, cli
+
+# Disable Claude auto updates
+claude config set -g autoUpdaterStatus disabled
+
+# Enable Claude auto updates  
+claude config set -g autoUpdaterStatus enabled
+
+# Check current auto update status
+claude config get -g autoUpdaterStatus
+
+# Install specific version of Claude
+npm install -g @anthropic-ai/claude-code@<version>
