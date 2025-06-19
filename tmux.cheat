@@ -4,7 +4,22 @@
 tmux list-keys -N
 
 # Create a new session with a name
-tmux new-session -s <session-name>
+tmux new-session -s '<session-name>'
 
 # Rename the current window
-tmux rename-window <new-name>
+tmux rename-window '<new-name>'
+
+# Switch to a window in another session
+tmux switch-client -t '<target_window>'
+
+# Link a window from another session to current session
+tmux link-window -s '<source_window>' -d
+
+# Move to a specific window in another session (alternative syntax)
+tmux select-window -t '<target_window>'
+
+# List all windows across all sessions with details
+tmux list-windows -a
+
+$ target_window: tmux list-windows -a -F '#{session_name}:#{window_index}: #{window_name}' --- --delimiter ':' --fzf-overrides '--accept-nth=1,2'
+$ source_window: tmux list-windows -a -F '#{session_name}:#{window_index}: #{window_name}' --- --delimiter ':' --fzf-overrides '--accept-nth=1,2'
